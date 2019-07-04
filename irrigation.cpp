@@ -143,19 +143,22 @@ int main(int argc, char* argv[])
 	pumpData[0].triggerTimes[0].hour = 9;
 	pumpData[0].triggerTimes[0].min = 0;
 	pumpData[0].triggerTimes[0].sec = 0;
+	pumpData[0].triggerTimes[1].hour = 21;
+	pumpData[0].triggerTimes[1].min = 0;
+	pumpData[0].triggerTimes[1].sec = 0;
 	pumpData[0].durationMs = 10 * 1000;
 	
 	pumpData[1].pin = 27;
 	pumpData[1].numTriggerTimes = 3;
-	pumpData[1].triggerTimes[0].hour = 8;
-	pumpData[1].triggerTimes[0].min = 59;
-	pumpData[1].triggerTimes[0].sec = 35;
-	pumpData[1].triggerTimes[0].hour = 8;
-	pumpData[1].triggerTimes[0].min = 59;
-	pumpData[1].triggerTimes[0].sec = 45;
-	pumpData[1].triggerTimes[0].hour = 8;
-	pumpData[1].triggerTimes[0].min = 59;
-	pumpData[1].triggerTimes[0].sec = 55;
+	pumpData[1].triggerTimes[0].hour = 19;
+	pumpData[1].triggerTimes[0].min = 0;
+	pumpData[1].triggerTimes[0].sec = 0;
+	pumpData[1].triggerTimes[1].hour = 19;
+	pumpData[1].triggerTimes[1].min = 0;
+	pumpData[1].triggerTimes[1].sec = 10;
+	pumpData[1].triggerTimes[2].hour = 19;
+	pumpData[1].triggerTimes[2].min = 0;
+	pumpData[1].triggerTimes[2].sec = 20;
 	pumpData[1].durationMs = 5 * 1000;
 	
 	for (int i = 0; i < NUM_PUMPS; i++) {
@@ -215,6 +218,8 @@ int main(int argc, char* argv[])
 				if (pumpData[i].elapsedMs >= pumpData[i].durationMs) {
 					pumpData[i].enabled = false;
 					ClearPin(p, pumpData[i].pin);
+					printf("Pump %d turned OFF at %02d:%02d:%02d (ran for %.03f ms)\n",
+						i, t.hour, t.min, t.sec, pumpData[i].elapsedMs);
 				}
 			}
 			else {
@@ -223,6 +228,8 @@ int main(int argc, char* argv[])
 						pumpData[i].enabled = true;
 						pumpData[i].elapsedMs = 0;
 						SetPin(p, pumpData[i].pin);
+						printf("Pump %d turned  ON at %02d:%02d:%02d\n",
+							i, t.hour, t.min, t.sec);
 						break;
 					}
 				}
