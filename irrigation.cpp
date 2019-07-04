@@ -151,13 +151,13 @@ int main(int argc, char* argv[])
 	pumpData[1].pin = 27;
 	pumpData[1].numTriggerTimes = 3;
 	pumpData[1].triggerTimes[0].hour = 19;
-	pumpData[1].triggerTimes[0].min = 0;
+	pumpData[1].triggerTimes[0].min = 6;
 	pumpData[1].triggerTimes[0].sec = 0;
 	pumpData[1].triggerTimes[1].hour = 19;
-	pumpData[1].triggerTimes[1].min = 0;
+	pumpData[1].triggerTimes[1].min = 6;
 	pumpData[1].triggerTimes[1].sec = 10;
 	pumpData[1].triggerTimes[2].hour = 19;
-	pumpData[1].triggerTimes[2].min = 0;
+	pumpData[1].triggerTimes[2].min = 6;
 	pumpData[1].triggerTimes[2].sec = 20;
 	pumpData[1].durationMs = 5 * 1000;
 	
