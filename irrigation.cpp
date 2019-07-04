@@ -218,7 +218,7 @@ int main(int argc, char* argv[])
 				if (pumpData[i].elapsedMs >= pumpData[i].durationMs) {
 					pumpData[i].enabled = false;
 					ClearPin(p, pumpData[i].pin);
-					printf("Pump %d turned OFF at %02d:%02d:%02d (ran for %.03f ms)\n",
+					printf("Pump %d turned OFF at %02d:%02d:%02d (ran for %d ms)\n",
 						i, t.hour, t.min, t.sec, pumpData[i].elapsedMs);
 				}
 			}
