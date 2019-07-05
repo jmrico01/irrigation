@@ -139,7 +139,7 @@ int main(int argc, char* argv[])
 	PumpData pumpData[NUM_PUMPS];
 	
 	pumpData[0].pin = 22;
-	pumpData[0].numTriggerTimes = 1;
+	pumpData[0].numTriggerTimes = 2;
 	pumpData[0].triggerTimes[0].hour = 9;
 	pumpData[0].triggerTimes[0].min = 0;
 	pumpData[0].triggerTimes[0].sec = 0;
